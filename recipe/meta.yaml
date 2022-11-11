@@ -10,8 +10,9 @@ source:
   sha256: 6221886498559e072058206152aa01c7fb205b2bd5c521a1e853b82f49309566
 
 build:
-  skip: true  # [py<37 or py>37]
+  skip: true  # [py<37 or py>10]
   skip: True  # [win or osx]
+  noarch: python
   entry_points:
     - feast=feast.cli:cli
   script: {{ PYTHON }} -m pip install . -vv
@@ -20,9 +21,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - python
+    - python >=3.7,<3.11
   host:
-    - python
+    - python >=3.7,<3.11
     - setuptools-scm
     - grpcio >=1.41.1
     - grpcio-tools >=1.41.1
@@ -31,7 +32,7 @@ requirements:
     - sphinx !=4.0.0
     - pip
   run:
-    - python
+    - python >=3.7,<3.11
     - click >=7.0.0,<9.0.0
     - colorama >=0.3.9,<1
     - dill ==0.3.*
