@@ -31,7 +31,7 @@ requirements:
     - sphinx !=4.0.0
     - pip
   run:
-    - python >=3.7,<3.10
+    - python
     - click >=7.0.0,<9.0.0
     - colorama >=0.3.9,<1
     - dill ==0.3.*
