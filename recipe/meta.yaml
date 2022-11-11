@@ -22,7 +22,7 @@ requirements:
     - {{ compiler('c') }}
     - python
   host:
-    - python >=3.7,<3.8
+    - python
     - setuptools-scm
     - grpcio >=1.41.1
     - grpcio-tools >=1.41.1
