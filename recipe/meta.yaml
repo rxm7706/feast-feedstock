@@ -1,5 +1,5 @@
 {% set name = "feast" %}
-{% set version = "0.26.0" %}
+{% set version = "0.27.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/feast-{{ version }}.tar.gz
-  sha256: 6221886498559e072058206152aa01c7fb205b2bd5c521a1e853b82f49309566
+  sha256: a08c6f46d163c46aab6fc3952b4d32b48a0d6373726cac4eb3bce1ac70136f24
 
 build:
 #  skip: true  # [py<37 or py>10]
@@ -16,7 +16,7 @@ build:
   entry_points:
     - feast=feast.cli:cli
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   build:
