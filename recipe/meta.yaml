@@ -19,26 +19,28 @@ build:
   number: 0
 
 requirements:
-  build:
-    - {{ compiler('c') }}
-    - python >=3.7,<3.11
+  #build:
+    #- {{ compiler('c') }}
+    #- python >=3.7,<3.11
   host:
-    - python >=3.7,<3.11
-    - setuptools-scm
-    - grpcio >=1.41.1
-    - grpcio-tools >=1.41.1
-    - mypy-protobuf ==3.0
-    - pybindgen ==0.22.1
+    - python >=3.7
+    - setuptools >=60
+    - wheel
+    - setuptools-scm >=6.2
+    - grpcio
+    - grpcio-tools >=1.47.0
+    - mypy-protobuf ==3.1
     - sphinx !=4.0.0
+    - pybindgen ==0.22.1
     - pip
   run:
-    - python >=3.7,<3.11
+    - python >=3.7
     - click >=7.0.0,<9.0.0
     - colorama >=0.3.9,<1
-    - dill ==0.3.*
+    - dill >=0.3.0,<0.4.0
     - fastavro >=1.1.0,<2
-    - google-api-core >=1.23.0,<3
-    - googleapis-common-protos >=1.52.*,<2
+    #- google-api-core >=1.23.0,<3
+    #- googleapis-common-protos >=1.52.*,<2
     - grpcio >=1.41.1,<2
     - grpcio-reflection >=1.41.1,<2
     - jinja2 >=2,<4
@@ -46,13 +48,14 @@ requirements:
     - mmh3
     - numpy >=1.21,<3
     - pandas >=1.3.5,<2
-    - pandavro ==1.5.*
-    - protobuf <5,>3
+    - pandavro >=1.5.0,<1.6.0
+    - protobuf >3.0,<5.0
     - proto-plus >=1.20.0,<2
-    - pyarrow >=4,<10
+    - pyarrow >=4,<13
     - pydantic >=1,<2
     - pygments >=2.12.0,<3
-    - pyyaml >=5.4.*,<7
+    - pyyaml >=5.4.0,<7
+    - requests
     - sqlalchemy >1,<2
     - tabulate >=0.8.0,<1
     - tenacity >=7,<9
@@ -61,8 +64,10 @@ requirements:
     - typeguard
     - fastapi >=0.66.0,<1
     - uvicorn >=0.14.0,<1
-    - dask-core >=2021.*,<=2022.02.0
+    - gunicorn
+    - dask-core >=2021.1.0
     - bowler
+    - httpx >=0.23.3
 
 test:
   imports:
