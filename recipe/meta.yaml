@@ -42,10 +42,8 @@ requirements:
     - dill >=0.3.0,<0.4.0
     - fastapi >=0.68.0,<0.100
     - fastavro >=1.8.0,<2
-    #- google-api-core >=1.23.0,<3
-    #- googleapis-common-protos >=1.52.*,<2
     - grpcio >=1.41.1,<2
-    - grpcio-health-checking >=1.41.1,<2
+    #- grpcio-health-checking >=1.41.1,<2
     - grpcio-reflection >=1.41.1,<2
     - grpcio-tools >=1.41.1,<2
     - gunicorn
