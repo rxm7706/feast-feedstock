@@ -44,6 +44,8 @@ requirements:
     - grpcio-tools >=1.47.0,<2
     - gunicorn
     - httpx >=0.23.3
+    - importlib-metadata >=6.8.0,<7
+    - importlib-resources >=6.0.0,<7
     - jinja2 >=2,<4
     - jsonschema
     - mmh3
