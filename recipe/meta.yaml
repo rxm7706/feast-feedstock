@@ -24,9 +24,9 @@ requirements:
     - setuptools-scm >=6.2
     - grpcio
     - grpcio-tools >=1.47.0
-    - mypy-protobuf ==3.1 # Pinned
+    - mypy-protobuf >=3.1 # Pinned
     - sphinx !=4.0.0
-    - pybindgen ==0.22.0 # Pinned
+    - pybindgen >=0.22.1 # Pinned
     - pip
   run:
     - python >=3.8
