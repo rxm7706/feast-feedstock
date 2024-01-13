@@ -13,7 +13,7 @@ build:
   entry_points:
     - feast=feast.cli:cli
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
@@ -24,38 +24,30 @@ requirements:
     - setuptools-scm >=6.2
     - grpcio
     - grpcio-tools >=1.47.0
-    - mypy-protobuf >=3.1
+    - mypy-protobuf ==3.1 # Pinned
     - sphinx !=4.0.0
-    - pybindgen >=0.22.1
+    - pybindgen ==0.22.0 # Pinned
     - pip
   run:
     - python >=3.8
-    - bowler
     - click >=7.0.0,<9.0.0
     - colorama >=0.3.9,<1
-    - dask-core >=2021.1.0
     - dill >=0.3.0,<0.4.0
-    - fastapi >=0.68.0,<0.100
     - fastavro >=1.1.0,<2
-    - avro
-    - grpcio >=1.47.0,<2
-    - grpcio-health-checking >=1.47.0,<2
-    - grpcio-reflection >=1.47.0,<2
-    - grpcio-tools >=1.47.0,<2
-    - gunicorn
-    - httpx >=0.23.3
-    - importlib-metadata >=6.8.0,<7
-    - importlib-resources >=6.0.0,<7
+    - grpcio >=1.56.2,<2
+    - grpcio-tools >=1.56.2,<2
+    - grpcio-reflection >=1.56.2,<2
+    - grpcio-health-checking >=1.56.2,<2
+    - mypy-protobuf ==3.1 # Pinned
     - jinja2 >=2,<4
     - jsonschema
     - mmh3
-    - mypy-protobuf ==3.1
     - numpy >=1.22,<1.25
-    - pandas >=1.4.3,<2.0
+    - pandas >=1.4.3,<2
     - pandavro >=1.5.0,<1.6.0
+    - protobuf >3.20,<4.23.4
     - proto-plus >=1.20.0,<2
-    - protobuf >3.20
-    - pyarrow >=4,<12
+    - pyarrow >=4
     - pydantic >=1,<2
     - pygments >=2.12.0,<3
     - pyyaml >=5.4.0,<7
@@ -65,8 +57,15 @@ requirements:
     - tenacity >=7,<9
     - toml >=0.10.0,<1
     - tqdm >=4,<5
-    - typeguard ==2.13.3
+    - typeguard ==2.13.3 # Pinned
+    - fastapi >=0.68.0,<0.100
     - uvicorn >=0.14.0,<1
+    - gunicorn
+    - dask-core >=2021.1.0
+    - bowler
+    - httpx >=0.23.3
+    - importlib-resources >=6.0.0,<7
+    - importlib-metadata >=6.8.0,<7
 
 test:
   imports:
