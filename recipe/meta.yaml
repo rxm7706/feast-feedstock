@@ -1,5 +1,5 @@
 {% set name = "feast" %}
-{% set version = "0.39.1" %}
+{% set version = "0.40.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/feast-{{ version }}.tar.gz
-  sha256: a3ac5f0d498cb55373a6b6f1d4f9525d7f919c09827aa9b084170e4a0119cf55
+  sha256: 7b5a9c04345cfc3ee6703324b87d2ba6506d9809f08f26627b3a8189ee5a6ebb
 
 build:
   entry_points:
@@ -54,7 +54,7 @@ requirements:
     - fastapi >=0.68.0
     - uvicorn >=0.14.0,<1
     - gunicorn
-    - dask-core >=2024.4.2
+    - dask-core >=2024.2.1
 
 test:
   imports:
