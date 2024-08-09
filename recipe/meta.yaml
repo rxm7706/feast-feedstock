@@ -1,5 +1,5 @@
 {% set name = "feast" %}
-{% set version = "0.40.0" %}
+{% set version = "0.40.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/feast-{{ version }}.tar.gz
-  sha256: 7b5a9c04345cfc3ee6703324b87d2ba6506d9809f08f26627b3a8189ee5a6ebb
+  sha256: 2a001f0ec0f74065d9a45dea1654ca5d751eed6d88c781e60d2f044a5b6d85b4
 
 build:
   entry_points:
