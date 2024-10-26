@@ -1,5 +1,5 @@
 {% set name = "feast" %}
-{% set version = "0.40.1" %}
+{% set version = "0.41.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/feast-{{ version }}.tar.gz
-  sha256: 2a001f0ec0f74065d9a45dea1654ca5d751eed6d88c781e60d2f044a5b6d85b4
+  sha256: 7f570104ae810f0e405d98444e8e6dfddae5986d70e86c7f39627f111de99214
 
 build:
   entry_points:
@@ -29,6 +29,11 @@ requirements:
     - pybindgen >=0.22.1 # Pinned
     - pip
   run:
+    - bigtree >=0.19.2
+    - prometheus_client
+    - psutil
+    - pyjwt
+    - uvicorn-worker
     - python >=3.8
     - click >=7.0.0,<9.0.0
     - colorama >=0.3.9,<1
@@ -40,7 +45,7 @@ requirements:
     - numpy >=1.22,<2
     - pandas >=1.4.3,<3
     - protobuf >=4.24.0,<5.0.0
-    - pyarrow >=4
+    - pyarrow >=9.0.0
     - pydantic >=2.0.0
     - pygments >=2.12.0,<3
     - pyyaml >=5.4.0,<7
