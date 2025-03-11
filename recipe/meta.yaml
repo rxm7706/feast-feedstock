@@ -1,5 +1,5 @@
 {% set name = "feast" %}
-{% set version = "0.41.3" %}
+{% set version = "0.47.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/feast-{{ version }}.tar.gz
-  sha256: 7f570104ae810f0e405d98444e8e6dfddae5986d70e86c7f39627f111de99214
+  sha256: bb257cfe238496e0bac4e62360f4b7af6c1d4265b0c32a96c4b3d37cd7e7a3a3
 
 build:
   entry_points:
     - feast=feast.cli:cli
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -44,8 +44,8 @@ requirements:
     - mmh3
     - numpy >=1.22,<2
     - pandas >=1.4.3,<3
-    - protobuf >=4.24.0,<5.0.0
-    - pyarrow >=9.0.0
+    - protobuf >=4.24.0
+    - pyarrow <18.1.0
     - pydantic >=2.0.0
     - pygments >=2.12.0,<3
     - pyyaml >=5.4.0,<7
