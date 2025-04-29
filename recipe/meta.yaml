@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - pybindgen ?=0.22.1  # Pinned to ==0.22.0, which is not available
+    - pybindgen >=0.22.1  # Pinned to ==0.22.0, which is not available
     - setuptools >=60,<77
     - setuptools-scm >=6.2
     - sphinx !=4.0.0
